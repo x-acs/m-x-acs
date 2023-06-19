@@ -1,0 +1,75 @@
+#+title: README
+#+author: Sidney PEPO
+#+date: [2023-12-10 Sun]
+
+* GNU Emacs-ACS
+** Screenshots
+[[file:screenshots/01.png]]
+[[file:screenshots/02.png]]
+
+** Installation
+To install ACS on GNU Emacs, follow these instructions:
+
+1. Check what is the default custom theme directory. To do this, press ~M-x~, then type ~customize-variable~ and press enter. After that, type ~custom-theme-directory~ and press enter again.
+
+2. In the "Customize Option" buffer, look for the "String" value (by default, it should be ~​~/.emacs.d/~, but don't worry if it's different). So, from now, the checked path will be mentioned as ~<themes_path>~, so make sure that you've annotated your GNU Emacs ~<themes_path>~!
+
+3. Open a terminal, clone this repo and then and copy the dark and light theme source code files to the ~<themes_path>~ as follow:
+   #+begin_src sh
+   git clone https://git.disroot.org/x-acs/m-x-acs.git
+
+   cp -f m-x-acs/src/* <themes_path> # "~/.emacs.d/", for example
+   #+end_src
+
+4. Open your GNU Emacs configuration file (~​~/.emacs~, or ~​~/.emacs.d/init.el~, or etc.), then choose one of the following ways to auto-load the theme of your choice:
+
+   - ~custom-set-variables~ way (easiest):
+     In the ~custom-set-variables~ function of your GNU Emacs configuration file, add the ~custom-enabled-themes~ variable and set it to the theme of your choice, like this:
+     #+begin_src elisp
+     (custom-set-variables
+      ... ; Some Elisp code...
+      '(custom-enabled-themes '(x-acs-dark))) ; For the dark theme
+     #+end_src
+
+     or
+
+     #+begin_src elisp
+     (custom-set-variables
+      ... ; Some Elisp code...
+      '(custom-enabled-themes '(x-acs-light))) ; For the light theme
+     #+end_src
+
+   - ~load-theme~ way *(recomended)*:
+     Add the ~load-theme~ function in your GNU Emacs configuration file and set the theme of your choice, like this:
+     #+begin_src elisp
+     ... ; Some Elisp code...
+     (load-theme 'x-acs-dark) ; For the dark theme
+     #+end_src
+
+     or
+
+     #+begin_src elisp
+     ... ; Some Elisp code...
+     (load-theme 'x-acs-light) ; For the light theme
+     #+end_src
+
+   Now save and close the configuration file and your GNU Emacs.
+
+5. Reopen your GNU Emacs and, as it's the first theme load, it'll ask
+   #+begin_src text
+   Loading a theme can run Lisp code.  Really load? (y or n) 
+   #+end_src
+
+   press ~y~
+
+   #+begin_src text
+   Treat this theme as safe in future sessions? (y or n) 
+   #+end_src
+
+   and press ~y~ again.
+
+Now it's done!
+
+#+begin_quote
+Note: as GNU Emacs has a lot of features and packages, this repo will be constantly updated, so periodically check it and, if it was updated, repeat the installation steps.
+#+end_quote
