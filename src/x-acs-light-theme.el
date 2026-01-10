@@ -1,11 +1,11 @@
-;;; x-acs-legacy-dark-theme.el --- X-ACS legacy dark theme -*- lexical-binding: t; -*-
+;;; x-acs-light-theme.el --- X-ACS light theme -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2023-2026 X-ACS
 
 ;; Author: Sidney PEPO <sidneypepo@disroot.org>
 
 ;; Version: 20260115
-;; Keywords: theme, dark, legacy, x-acs
+;; Keywords: theme, light, x-acs
 
 ;; This file is not part of GNU Emacs.
 
@@ -24,44 +24,55 @@
 
 ;;; Commentary:
 
-;; X-ACS legacy dark theme for GNU Emacs
+;; X-ACS light theme for GNU Emacs
 
 ;;; Code:
 
-(deftheme x-acs-legacy-dark
-  "X-ACS legacy dark theme for GNU Emacs.")
+(deftheme x-acs-light
+  "X-ACS light theme for GNU Emacs.")
 
-(custom-theme-set-variables 'x-acs-legacy-dark	; This makes the theme fit better in Emacs and some packages
- '(frame-background-mode 'dark)
+(custom-theme-set-variables 'x-acs-light ; This makes the theme fit better in Emacs and some packages
+ '(frame-background-mode 'light)
  '(org-n-level-faces 6)
  '(rainbow-delimiters-max-face-count 6))
 
 (let* ((cls '((class color) (min-colors 89)))
 
        ;; X-ACS color scheme
-       (x-acs-red           "#CC0000")
-       (x-acs-yellow        "#CC8800")
-       (x-acs-green         "#00AA22")
-       (x-acs-cyan          "#0099BB")
-       (x-acs-blue          "#0033CC")
-       (x-acs-magenta       "#AA00CC")
+       (x-acs-dark-red      "#FF5050")
+       (x-acs-dark-yellow   "#FFDC6D")
+       (x-acs-dark-green    "#7CFF6C")
+       (x-acs-dark-cyan     "#53C7FF")
+       (x-acs-dark-blue     "#7391FF")
+       (x-acs-dark-magenta  "#f287f2")
 
-       (x-acs-light-red     "#FF2222")
-       (x-acs-light-yellow  "#FFBB11")
-       (x-acs-light-green   "#00DD55")
-       (x-acs-light-cyan    "#00CCEE")
-       (x-acs-light-blue    "#1166FF")
-       (x-acs-light-magenta "#DD33FF")
+       (x-acs-red           "#FF2222")
+       (x-acs-yellow        "#FFBB11")
+       (x-acs-green         "#00DD55")
+       (x-acs-cyan          "#00CCEE")
+       (x-acs-blue          "#1166FF")
+       (x-acs-magenta       "#DD33FF")
+
+       (x-acs-light-red     "#CC0000")
+       (x-acs-light-yellow  "#CC8800")
+       (x-acs-light-green   "#00AA22")
+       (x-acs-light-cyan    "#0099BB")
+       (x-acs-light-blue    "#0033CC")
+       (x-acs-light-magenta "#AA00CC")
 
        ;; Neutral colors
-       (x-acs-black      "#111111")
-       (x-acs-gray       "#444444")
-       (x-acs-light-gray "#BBBBBB")
-       (x-acs-white      "#EEEEEE")
+       (x-acs-black      "#EEEEEE")
+       (eigengrau        "#E9E9E2")
+       (x-acs-shadow     "#DFDFDA")
+       (x-acs-gray       "#BBBBBB")
+       (x-acs-light-gray "#444444")
+       (x-acs-shine      "#202025")
+       (rev-eigengrau    "#16161D")
+       (x-acs-white      "#111111")
 
        ;; Environment colors
-       (bg     x-acs-black)
-       (bg-alt x-acs-gray)
+       (bg     x-acs-shadow)
+       (bg-alt eigengrau)
        (fg     x-acs-white)
        (fg-alt x-acs-light-gray)
 
@@ -71,7 +82,7 @@
        (scs x-acs-green))
 
   (custom-theme-set-faces
-   'x-acs-legacy-dark
+   'x-acs-light
 
    ;; Faces format:
    ;; `(face-name ((,cls (:selector1 value1 :selector value2 :selector3 value3...))))
@@ -90,13 +101,13 @@
    `(error                    ((,cls (:foreground ,err))))
    `(fringe                   ((,cls (:background ,bg-alt))))
    `(help-key-binding         ((,cls (:background ,bg-alt :foreground ,fg))))
-   `(highlight                ((,cls (:background ,fg-alt))))
+   `(highlight                ((,cls (:background ,x-acs-gray))))
    `(hl-line                  ((,cls (:background ,bg-alt))))
    `(homoglyph                ((,cls (:foreground ,wrn))))
    `(info-menu-star           ((,cls (:foreground ,fg))))
    `(isearch                  ((,cls (:background ,fg-alt :foreground ,bg))))
-   `(lazy-highlight           ((,cls (:background ,bg-alt :foreground ,fg))))
-   `(line-number              ((,cls (:foreground ,bg-alt :inherit default))))
+   `(lazy-highlight           ((,cls (:background ,x-acs-gray :foreground ,bg))))
+   `(line-number              ((,cls (:foreground ,x-acs-gray :inherit default))))
    `(line-number-current-line ((,cls (:foreground ,fg-alt :inherit (hl-line default)))))
    `(link                     ((,cls (:foreground ,x-acs-light-cyan :underline t))))
    `(link-visited             ((,cls (:foreground ,x-acs-light-magenta :underline t))))
@@ -105,13 +116,13 @@
    `(mode-line-buffer-id      ((,cls (:foreground ,fg))))
    `(mode-line-highlight      ((,cls (:inverse-video t))))
    `(mode-line-inactive       ((,cls (:background ,bg-alt :foreground ,fg-alt))))
-   `(region                   ((,cls (:background ,bg-alt))))
+   `(region                   ((,cls (:background ,x-acs-gray))))
    `(secondary-selection      ((,cls (:background ,wrn :foreground ,bg))))
    `(shadow                   ((,cls (:foreground ,fg-alt))))
    `(success                  ((,cls (:foreground ,scs))))
    `(warning                  ((,cls (:foreground ,wrn))))
-   `(widget-field             ((,cls (:background ,bg-alt :foreground ,fg))))
-   `(widget-inactive          ((,cls (:background ,fg-alt :foreground ,bg-alt :weight normal))))
+   `(widget-field             ((,cls (:background ,x-acs-gray :foreground ,fg))))
+   `(widget-inactive          ((,cls (:background ,x-acs-gray :foreground ,fg-alt :weight normal))))
 
    ;; Font Lock
    `(font-lock-builtin-face       ((,cls (:foreground ,x-acs-light-magenta :slant italic))))
@@ -334,7 +345,7 @@
    `(ivy-current-match           ((,cls (:background ,fg-alt :foreground ,bg))))
    `(ivy-cursor                  ((,cls (:background ,fg-alt))))
    `(ivy-match-required-face     ((,cls (:foreground ,err))))
-   `(ivy-minibuffer-match-face-1 ((,cls (:background ,bg-alt :foreground ,fg))))
+   `(ivy-minibuffer-match-face-1 ((,cls (:background ,x-acs-gray :foreground ,fg))))
    `(ivy-minibuffer-match-face-2 ((,cls (:inherit ivy-minibuffer-match-face-1))))
    `(ivy-minibuffer-match-face-3 ((,cls (:inherit ivy-minibuffer-match-face-1))))
    `(ivy-minibuffer-match-face-4 ((,cls (:inherit ivy-minibuffer-match-face-1))))
@@ -456,6 +467,6 @@
 
    ))
 
-(provide-theme 'x-acs-legacy-dark)
+(provide-theme 'x-acs-light)
 
-;;; x-acs-legacy-dark-theme.el ends here
+;;; x-acs-light-theme.el ends here

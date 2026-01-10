@@ -1,75 +1,78 @@
 #+title: README
 #+author: Sidney PEPO
-#+date: [2026-01-10 Sat]
+#+date: [2026-01-15 Thu]
 
 * GNU Emacs-ACS
 ** Screenshots
-[[file:screenshots/01.png]]
-[[file:screenshots/02.png]]
+*** Default themes
+[[file:screenshots/x-acs-dark.png]]
+[[file:screenshots/x-acs-light.png]]
+
+*** Legacy themes
+[[file:screenshots/x-acs-legacy-dark.png]]
+[[file:screenshots/x-acs-legacy-light.png]]
 
 ** Installation
 #+begin_quote
 Note: as GNU Emacs has a lot of features and packages, this repo will be constantly updated, so periodically check it and, if it was updated, repeat the installation steps.
 #+end_quote
 
-To install ACS on GNU Emacs, follow these instructions:
+To install ACS on GNU Emacs, follow these steps:
+1. Check what is the custom theme directory.
 
-1. Check what is the default custom theme directory. To do this, press ~M-x~, then type ~customize-variable~ and press enter. After that, type ~custom-theme-directory~ and press enter again.
+   To do this, type ~M-x customize-variable RET custom-theme-directory RET~.
 
-2. In the "Customize Option" buffer, look for the "String" value (by default, it should be ~​~/.emacs.d/~, but don't worry if it's different). So, from now, the checked path will be mentioned as ~<themes_path>~, so make sure that you've annotated your GNU Emacs ~<themes_path>~!
+2. In the "Customize Option" buffer, look for the "String" value. For the next steps, we'll assume it is the default value (~​~/.emacs.d/~), but, if yours is different, *don't forget to change it in the next steps*!
 
-3. Open a terminal, clone this repo and then and copy the dark and light theme source code files to the ~<themes_path>~ as follow:
+3. Open a terminal, clone this repo and then and copy the theme files to the ~custom-theme-directory~ path (remember to change ~​~/.emacs.d/~ to the correct value if yours is different!).
+
+   To do this, run
+
    #+begin_src sh
-   git clone https://git.disroot.org/x-acs/m-x-acs.git
+git clone https://git.disroot.org/x-acs/m-x-acs.git
 
-   cp -f m-x-acs/src/* <themes_path> # "~/.emacs.d/", for example
+cp -f m-x-acs/src/* "~/.emacs.d/"
    #+end_src
 
-4. Open your GNU Emacs configuration file (~​~/.emacs~, or ~​~/.emacs.d/init.el~, or etc.), then choose one of the following ways to auto-load the theme of your choice:
+4. If you would like to test if a theme can be loaded, simply type ~M-x load-theme RET x-acs-dark RET~.
 
-   - ~custom-set-variables~ way (easiest):
-     In the ~custom-set-variables~ function of your GNU Emacs configuration file, add the ~custom-enabled-themes~ variable and set it to the theme of your choice, like this:
-     #+begin_src elisp
-     (custom-set-variables
-      ... ; Some Elisp code...
-      '(custom-enabled-themes '(x-acs-dark))) ; For the dark theme
-     #+end_src
-
-     or
-
-     #+begin_src elisp
-     (custom-set-variables
-      ... ; Some Elisp code...
-      '(custom-enabled-themes '(x-acs-light))) ; For the light theme
-     #+end_src
-
-   - ~load-theme~ way *(recomended)*:
-     Add the ~load-theme~ function in your GNU Emacs configuration file and set the theme of your choice, like this:
-     #+begin_src elisp
-     ... ; Some Elisp code...
-     (load-theme 'x-acs-dark) ; For the dark theme
-     #+end_src
-
-     or
-
-     #+begin_src elisp
-     ... ; Some Elisp code...
-     (load-theme 'x-acs-light) ; For the light theme
-     #+end_src
-
-   Now save and close the configuration file and your GNU Emacs.
-
-5. Reopen your GNU Emacs and, as it's the first theme load, it'll ask
-   #+begin_src text
-   Loading a theme can run Lisp code.  Really load? (y or n) 
-   #+end_src
-
-   press ~y~
+   As that's the first time loading the theme, GNU Emacs might ask if you really want to load the theme. If that's the case, just press ~y~ for each question, like this:
 
    #+begin_src text
-   Treat this theme as safe in future sessions? (y or n) 
+Loading a theme can run Lisp code.  Really load? (y or n) y
+
+Treat this theme as safe in future sessions? (y or n) y
    #+end_src
 
-   and press ~y~ again.
+   If everything goes fine, then you can disable the theme by typing ~M-x disable-theme RET x-acs-dark RET~.
+
+   #+begin_quote
+Note: in this example, we selected the regular dark theme (i.e. ~x-acs-dark~), but you can use any available one. This applies to the next step, so *don't forget* to change the following code snippets accordingly!
+   #+end_quote
+
+5. Choose one of the methods below to auto-load the theme of your choice. Once you're done, save your changes.
+   - ~load-theme~ method
+     If your GNU Emacs is [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html][customized via an init file]] (e.g. ~init.el~), this method is more appropriate.
+
+     To do it, open your init file and simply add the ~load-theme~ function passing the theme of your choice as the argument, like this:
+
+     #+begin_src elisp
+... ; Some Elisp code...
+(load-theme 'x-acs-dark)
+... ; More Elisp code...
+     #+end_src
+
+   - ~custom-set-variables~ method
+     If your GNU Emacs is [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Easy-Customization.html][customized via the ~customize~ interface]], this method is more appropriate.
+
+     To do it, open your custom file and, in the ~custom-set-variables~ function, add the ~custom-enabled-themes~ variable setting it to the theme of your choice, like this:
+
+     #+begin_src elisp
+(custom-set-variables
+... ; Some Elisp code...
+'(custom-enabled-themes '(x-acs-dark)))
+     #+end_src
+
+6. Close and reopen your GNU Emacs. If everything goes fine, the theme should be loaded with no errors.
 
 Now it's done!

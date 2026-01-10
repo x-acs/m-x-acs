@@ -4,7 +4,7 @@
 
 ;; Author: Sidney PEPO <sidneypepo@disroot.org>
 
-;; Version: 20260110
+;; Version: 20260115
 ;; Keywords: theme, light, legacy, x-acs
 
 ;; This file is not part of GNU Emacs.
@@ -263,18 +263,18 @@
    `(window-divider-last-pixel  ((,cls (:inherit window-divider))))
 
    ;; Whitespace
-   `(whitespace-big-indent             ((,cls (:background ,err :foreground ,err))))
-   `(whitespace-empty                  ((,cls (:background ,wrn :foreground ,err))))
-   `(whitespace-hspace                 ((,cls (:background ,bg-alt :foreground ,fg-alt))))
-   `(whitespace-indentation            ((,cls (:inherit whitespace-empty))))
-   `(whitespace-line                   ((,cls (:background ,bg-alt :foreground ,wrn))))
-   `(whitespace-missing-newline-at-eof ((,cls (:background ,wrn :foreground ,bg-alt))))
-   `(whitespace-newline                ((,cls (:foreground ,bg-alt))))
+   `(whitespace-hspace                 ((,cls (:foreground ,bg-alt))))
+   `(whitespace-big-indent             ((,cls (:foreground ,err))))
+   `(whitespace-indentation            ((,cls (:foreground ,wrn))))
+   `(whitespace-empty                  ((,cls (:background ,wrn :inherit whitespace-hspace))))
+   `(whitespace-line                   ((,cls (:underline (:style dots)))))
+   `(whitespace-missing-newline-at-eof ((,cls (:inherit whitespace-big-indent))))
+   `(whitespace-newline                ((,cls (:inherit whitespace-hspace))))
    `(whitespace-space                  ((,cls (:inherit whitespace-hspace))))
-   `(whitespace-space-after-tab        ((,cls (:inherit whitespace-empty))))
-   `(whitespace-space-before-tab       ((,cls (:background ,err :foreground ,wrn))))
+   `(whitespace-space-after-tab        ((,cls (:inherit whitespace-indentation))))
+   `(whitespace-space-before-tab       ((,cls (:inherit whitespace-indentation))))
    `(whitespace-tab                    ((,cls (:inherit whitespace-hspace))))
-   `(whitespace-trailing               ((,cls (:inherit whitespace-space-before-tab))))
+   `(whitespace-trailing               ((,cls (:inherit whitespace-indentation))))
 
    ;;;; End of GNU Emacs' faces
 
@@ -441,16 +441,16 @@
    `(rainbow-delimiters-unmatched-face  ((,cls (:foreground ,err :weight black  :strike-through t))))
 
    ;; Vterm
-   `(vterm-color-black         ((,cls (:background ,x-acs-gray :foreground ,x-acs-black))))
-   `(vterm-color-blue          ((,cls (:background ,x-acs-light-blue :foreground ,x-acs-blue))))
-   `(vterm-color-cyan          ((,cls (:background ,x-acs-light-cyan :foreground ,x-acs-cyan))))
-   `(vterm-color-green         ((,cls (:background ,x-acs-light-green :foreground ,x-acs-green))))
+   `(vterm-color-black         ((,cls (:background ,x-acs-black :foreground ,x-acs-gray))))
+   `(vterm-color-blue          ((,cls (:background ,x-acs-blue :foreground ,x-acs-light-blue))))
+   `(vterm-color-cyan          ((,cls (:background ,x-acs-cyan :foreground ,x-acs-light-cyan))))
+   `(vterm-color-green         ((,cls (:background ,x-acs-green :foreground ,x-acs-light-green))))
    `(vterm-color-inverse-video ((,cls (:inverse-video t))))
-   `(vterm-color-magenta       ((,cls (:background ,x-acs-light-magenta :foreground ,x-acs-magenta))))
-   `(vterm-color-red           ((,cls (:background ,x-acs-light-red :foreground ,x-acs-red))))
+   `(vterm-color-magenta       ((,cls (:background ,x-acs-magenta :foreground ,x-acs-light-magenta))))
+   `(vterm-color-red           ((,cls (:background ,x-acs-red :foreground ,x-acs-light-red))))
    `(vterm-color-underline     ((,cls (:underline t))))
-   `(vterm-color-white         ((,cls (:background ,x-acs-white :foreground ,x-acs-light-gray))))
-   `(vterm-color-yellow        ((,cls (:background ,x-acs-light-yellow :foreground ,x-acs-yellow))))
+   `(vterm-color-white         ((,cls (:background ,x-acs-light-gray :foreground ,x-acs-white))))
+   `(vterm-color-yellow        ((,cls (:background ,x-acs-yellow :foreground ,x-acs-light-yellow))))
 
    ;;;; End of Packages' faces
 
