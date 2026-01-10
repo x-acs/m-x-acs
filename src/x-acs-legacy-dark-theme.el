@@ -1,11 +1,11 @@
-;;; x-acs-dark-theme.el --- X-ACS dark theme -*- lexical-binding: t; -*-
+;;; x-acs-legacy-dark-theme.el --- X-ACS legacy dark theme -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2023-2026 X-ACS
 
 ;; Author: Sidney PEPO <sidneypepo@disroot.org>
 
 ;; Version: 20260110
-;; Keywords: theme, dark, x-acs
+;; Keywords: theme, dark, legacy, x-acs
 
 ;; This file is not part of GNU Emacs.
 
@@ -24,14 +24,14 @@
 
 ;;; Commentary:
 
-;; X-ACS dark theme for GNU Emacs
+;; X-ACS legacy dark theme for GNU Emacs
 
 ;;; Code:
 
-(deftheme x-acs-dark
-  "X-ACS dark theme for GNU Emacs.")
+(deftheme x-acs-legacy-dark
+  "X-ACS legacy dark theme for GNU Emacs.")
 
-(custom-theme-set-variables 'x-acs-dark	; This makes the theme fit better in Emacs and some packages
+(custom-theme-set-variables 'x-acs-legacy-dark	; This makes the theme fit better in Emacs and some packages
  '(frame-background-mode 'dark)
  '(org-n-level-faces 6)
  '(rainbow-delimiters-max-face-count 6))
@@ -71,7 +71,7 @@
        (scs x-acs-green))
 
   (custom-theme-set-faces
-   'x-acs-dark
+   'x-acs-legacy-dark
 
    ;; Faces format:
    ;; `(face-name ((,cls (:selector1 value1 :selector value2 :selector3 value3...))))
@@ -456,6 +456,6 @@
 
    ))
 
-(provide-theme 'x-acs-dark)
+(provide-theme 'x-acs-legacy-dark)
 
-;;; x-acs-dark-theme.el ends here
+;;; x-acs-legacy-dark-theme.el ends here

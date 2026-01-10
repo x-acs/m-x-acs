@@ -1,11 +1,11 @@
-;;; x-acs-light-theme.el --- X-ACS light theme -*- lexical-binding: t; -*-
+;;; x-acs-legacy-light-theme.el --- X-ACS legacy light theme -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2023-2026 X-ACS
 
 ;; Author: Sidney PEPO <sidneypepo@disroot.org>
 
 ;; Version: 20260110
-;; Keywords: theme, light, x-acs
+;; Keywords: theme, light, legacy, x-acs
 
 ;; This file is not part of GNU Emacs.
 
@@ -24,14 +24,14 @@
 
 ;;; Commentary:
 
-;; X-ACS light theme for GNU Emacs
+;; X-ACS legacy light theme for GNU Emacs
 
 ;;; Code:
 
-(deftheme x-acs-light
-  "X-ACS light theme for GNU Emacs.")
+(deftheme x-acs-legacy-light
+  "X-ACS legacy light theme for GNU Emacs.")
 
-(custom-theme-set-variables 'x-acs-light ; This makes the theme fit better in Emacs and some packages
+(custom-theme-set-variables 'x-acs-legacy-light ; This makes the theme fit better in Emacs and some packages
  '(frame-background-mode 'light)
  '(org-n-level-faces 6)
  '(rainbow-delimiters-max-face-count 6))
@@ -71,7 +71,7 @@
        (scs x-acs-green))
 
   (custom-theme-set-faces
-   'x-acs-light
+   'x-acs-legacy-light
 
    ;; Faces format:
    ;; `(face-name ((,cls (:selector1 value1 :selector value2 :selector3 value3...))))
@@ -456,6 +456,6 @@
 
    ))
 
-(provide-theme 'x-acs-light)
+(provide-theme 'x-acs-legacy-light)
 
-;;; x-acs-light-theme.el ends here
+;;; x-acs-legacy-light-theme.el ends here
