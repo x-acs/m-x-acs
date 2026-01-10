@@ -1,6 +1,6 @@
 #+title: README
 #+author: Sidney PEPO
-#+date: [2023-12-10 Sun]
+#+date: [2026-01-10 Sat]
 
 * GNU Emacs-ACS
 ** Screenshots
@@ -8,6 +8,10 @@
 [[file:screenshots/02.png]]
 
 ** Installation
+#+begin_quote
+Note: as GNU Emacs has a lot of features and packages, this repo will be constantly updated, so periodically check it and, if it was updated, repeat the installation steps.
+#+end_quote
+
 To install ACS on GNU Emacs, follow these instructions:
 
 1. Check what is the default custom theme directory. To do this, press ~M-x~, then type ~customize-variable~ and press enter. After that, type ~custom-theme-directory~ and press enter again.
@@ -69,7 +73,3 @@ To install ACS on GNU Emacs, follow these instructions:
    and press ~y~ again.
 
 Now it's done!
-
-#+begin_quote
-Note: as GNU Emacs has a lot of features and packages, this repo will be constantly updated, so periodically check it and, if it was updated, repeat the installation steps.
-#+end_quote
