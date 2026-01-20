@@ -4,7 +4,7 @@
 
 ;; Author: Sidney PEPO <sidneypepo@disroot.org>
 
-;; Version: 20260115
+;; Version: 20260119
 ;; Keywords: theme, dark, x-acs
 
 ;; This file is not part of GNU Emacs.
@@ -58,7 +58,7 @@
        (x-acs-light-green   "#7CFF6C")
        (x-acs-light-cyan    "#53C7FF")
        (x-acs-light-blue    "#7391FF")
-       (x-acs-light-magenta "#f287f2")
+       (x-acs-light-magenta "#F287F2")
 
        ;; Neutral colors
        (x-acs-black      "#111111")
@@ -95,7 +95,7 @@
    ;; Basic faces
    `(bold                     ((,cls (:weight black))))
    `(bold-italic              ((,cls (:slant italic :inherit bold))))
-   `(cursor                   ((,cls (:background ,fg-alt :foreground ,bg))))
+   `(cursor                   ((,cls (:background ,fg-alt :foreground ,bg-alt))))
    `(eshell-prompt            ((,cls (:foreground ,x-acs-light-green :weight black))))
    `(escape-glyph             ((,cls (:foreground ,wrn))))
    `(error                    ((,cls (:foreground ,err))))
